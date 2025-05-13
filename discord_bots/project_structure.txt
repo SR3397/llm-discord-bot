@@ -1,0 +1,10 @@
+
+./discord_bots
+│   ├── ali_g/
+│   ├── conspiracy_theorist/
+│   ├── pirate_captain/
+│   ├── shakespearean_scholar/
+│   ├── bot 5/
+│   ├── bot 6/
+│   ├── bot 7/
+│   ├── bot 8/

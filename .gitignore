@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Database
+*.sqlite
+user_offenses.sqlite
+
+# Backup files
+memory/.backup/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+
+# Compressed files
+*.7z
+.old/
+memory/
+profanity_lut.json

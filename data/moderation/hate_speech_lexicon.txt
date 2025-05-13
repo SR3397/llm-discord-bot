@@ -1,0 +1,26 @@
+# Unambiguous Hate Speech Lexicon - Ban-Level
+# Lines starting with # are comments
+# For automatic bans in content moderation; keep secure
+# Includes only severe, unambiguous slurs targeting protected groups (race, ethnicity, religion, gender, etc.)
+# IMPORTANT: Keep this file secure
+nigger
+nigga
+niggah
+niggaz
+coon
+kike
+yid
+sheeny
+chink
+gook
+slants
+zipperhead
+treadhead
+jeet
+faggot
+fag
+wetback
+spic
+raghead
+towelhead
+cameljockey
