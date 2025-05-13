@@ -408,8 +408,8 @@ async function getGifSearchTerms(botResponseText, currentMessage) {
       axios,
       config,
       memoryManager,
-      "claude-3-5-sonnet-20240620",
-      { useShortContext: true, messageCount: 3 }
+      "claude-3-5-haiku-20241022",
+      { useShortContext: true, messageCount: 4 }
     );
 
     if (llmResponseForGif && llmResponseForGif.toUpperCase() !== "NO_GIF") {

@@ -13,11 +13,11 @@
 // profanity-lut-generator.js
 // Run this script separately to pre-compute and optimize profanity detection patterns
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from "fs";
+import * as path from "path";
 
 // Configuration
-const dataDir = path.join(__dirname, 'data');
+const dataDir = ('data');
 const moderationDir = path.join(dataDir, 'moderation');
 const inputFile = path.join(moderationDir, 'hate_speech_lexicon.txt');
 const outputFile = path.join(moderationDir, 'profanity_lut.json');

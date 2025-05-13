@@ -1,10 +1,11 @@
-const { Client, GatewayIntentBits, Collection } = require("discord.js");
-const fs = require("fs");
-const path = require("path");
-const dayjs = require("dayjs");
-const utc = require("dayjs/plugin/utc");
-const timezone = require("dayjs/plugin/timezone");
-require("dotenv").config();
+import { Client, GatewayIntentBits, Collection } from "discord.js";
+import * as fs from "fs";
+import * as path from "path";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+import timezone from "dayjs/plugin/timezone.js";
+import * as dotenv from 'dotenv';
+const envResult = dotenv.config({ path: '.env' });
 
 // Configure dayjs with timezone support
 dayjs.extend(utc);
@@ -47,7 +48,7 @@ const memory = {
 };
 
 // Ensure memory directory exists
-const memoryDir = path.join(__dirname, "memory");
+const memoryDir = ("memory");
 if (!fs.existsSync(memoryDir)) {
   fs.mkdirSync(memoryDir);
 }
