@@ -33,8 +33,8 @@ A feature-rich Discord bot framework for creating multiple AI personalities powe
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/SR3397/discord-llm-bot.git
-cd discord-llm-bot
+git clone https://github.com/SR3397/llm-discord-bot.git
+cd llm-discord-bot
 ```
 
 2. **Install dependencies**

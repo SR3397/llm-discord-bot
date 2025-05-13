@@ -13,7 +13,7 @@
 console.log("Script starting...");
 
 // Main bot application using Discord.js
-import { Client, GatewayIntentBits, Partials, Collection } from "discord.js"; // Added Collection here
+import { Client, GatewayIntentBits, Partials, Collection } from "discord.js";
 import axios from "axios";
 import * as fs from "fs";
 import * as path from "path";
@@ -37,7 +37,6 @@ if (envResult.error) {
   console.error('\x1b[31m%s\x1b[0m', '└───────────────────────────────────────────────────┘');
   console.error('\x1b[33m%s\x1b[0m', `Error loading .env file: ${envResult.error.message}`);
   console.error('\x1b[33m%s\x1b[0m', `Path attempted: ${path.resolve(__dirname, '.env')}`);
-  // Continue with your instructions
   process.exit(1);
 }
 
@@ -107,8 +106,7 @@ const config = {
   replyRateLimitSeconds: parseInt(process.env.REPLY_RATE_LIMIT_SECONDS) || 18,  // time limit between messages
   typingWpm: parseInt(process.env.TYPING_WPM) || 60,  // speed at which it types (artificial limit)
   dateFormatForLogNames: process.env.DATE_FORMAT_LOG_NAMES || "YYYY-MM-DD",
-  dateFormatForPrompts: process.env.DATE_FORMAT_PROMPTS || "YYYY-MM-DD HH:mm:ss",
-  // New configurable messages
+
   sanitizationReplyMessage: process.env.SANITIZATION_REPLY_MESSAGE || "Hey, watch your language! Your message has been sanitized.",
   enableSanitizationReply: (process.env.ENABLE_SANITIZATION_REPLY || "true").toLowerCase() === "false", // Whether to reply with a message when a user's message is sanitized due to profanity
   timeoutDMMessageTemplate: process.env.TIMEOUT_DM_MESSAGE_TEMPLATE || "You are still timed out for {timeLeftFormatted}. Please wait before sending more messages.", // Use {timeLeftFormatted} as a placeholder
