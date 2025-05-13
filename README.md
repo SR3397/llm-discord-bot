@@ -2,7 +2,7 @@
 
 A feature-rich Discord bot framework for creating multiple AI personalities powered by Large Language Models, bringing intelligent, customizable, and engaging conversations to your Discord server.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--v3-green)
 ![Node.js](https://img.shields.io/badge/Node.js-16.11.0+-green.svg)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)
 
