@@ -126,10 +126,26 @@ const config = {
   unpromptedMessageSystemPrompt: process.env.UNPROMPTED_MESSAGE_SYSTEM_PROMPT || null,
   unpromptedMessageBasePrompt: process.env.UNPROMPTED_MESSAGE_BASE_PROMPT || `NOTE: Configure a personality-appropriate unprompted message prompt in your .env file using UNPROMPTED_MESSAGE_BASE_PROMPT. This should guide the bot on generating spontaneous messages that match its character.`,
   unpromptedTimePeriods: {
-    morning: { startHour: 8, endHour: 12, modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_MORNING) || 6 },
-    afternoon: { startHour: 12, endHour: 22, modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_AFTERNOON) || 8.4 },
-    evening: { startHour: 22, endHour: 2, modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_EVENING) || 10.5 },
-    night: { startHour: 2, endHour: 8, modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_NIGHT) || 1 }
+      morning: { 
+          startHour: parseFloat(process.env.MORNING_START_HOUR) || 6, 
+          endHour: parseFloat(process.env.AFTERNOON_START_HOUR) || 12, 
+          modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_MORNING) || 6 
+      },
+      afternoon: { 
+          startHour: parseFloat(process.env.AFTERNOON_START_HOUR) || 12, 
+          endHour: parseFloat(process.env.EVENING_START_HOUR) || 18, 
+          modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_AFTERNOON) || 8.4 
+      },
+      evening: { 
+          startHour: parseFloat(process.env.EVENING_START_HOUR) || 18, 
+          endHour: parseFloat(process.env.NIGHT_START_HOUR) || 22, 
+          modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_EVENING) || 10.5 
+      },
+      night: { 
+          startHour: parseFloat(process.env.NIGHT_START_HOUR) || 22, 
+          endHour: parseFloat(process.env.MORNING_START_HOUR) || 6, 
+          modifier: parseFloat(process.env.UNPROMPTED_MODIFIER_NIGHT) || 1 
+      }
   },
 };
 
@@ -397,7 +413,7 @@ async function getGifSearchTerms(botResponseText, currentMessage) {
     }
 
     const llmResponseForGif = await callLLM_new(
-      `Given the bot's response: "${botResponseText}". What are 1-3 concise, humorous search terms for a GIF that would complement it? Return ONLY the search terms, comma-separated. E.g.: \"happy dance\" or \"mind blown\". If no GIF is suitable, return \"NO_GIF\".`,
+      `Given the latest response: "${botResponseText}". What are 1-3 concise, humorous search terms for a GIF that would complement it? Return ONLY the search terms, comma-separated. E.g.: \"happy dance\" or \"mind blown\". If no GIF is suitable, return \"NO_GIF\".`,
       "You are an assistant that suggests GIF search terms. Be concise.",
       serverId,
       channelId,
